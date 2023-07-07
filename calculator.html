@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="calculator.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- <script src="calculator.js"></script> -->
+</head>
+<body>
+    
+    <div id="container">
+        <div id="result">
+    </div>
+    
+    <div id="function_buttons">
+        <button class="functional">CLEAR</button>
+        <button class="functional"><i class="fa-solid fa-delete-left"></i></button>
+    </div>
+    <div id="numbers_operators">
+        <div id="first_flex">
+            <div><button id="7" class="clickButtons">7</button></div>
+            <div><button id="8" class="clickButtons">8</button></div>
+            <div><button id="9" class="clickButtons">9</button></div>
+            <div><button id="/" class="clickButtons">/</button></div>
+        </div>
+        <div id="second_flex">
+            <div><button id="4" class="clickButtons">4</button></div>
+            <div><button id="5" class="clickButtons">5</button></div>
+            <div><button id="6" class="clickButtons">6</button></div>
+            <div><button id="*" class="clickButtons">*</button></div>
+        </div>
+        <div id="third_flex">
+            <div><button id="1" class="clickButtons">1</button></div>
+            <div><button id="2" class="clickButtons">2</button></div>
+            <div><button id="3" class="clickButtons">3</button></div>
+            <div><button id="-" class="clickButtons">-</button></div>
+        </div>
+        <div id="fourth_flex">    
+            <div><button id="." class="clickButtons">.</button></div>
+            <div><button id="0" class="clickButtons">0</button></div>
+            <div><button id="=" class="clickButtons">=</button></div>
+            <div><button id="+" class="clickButtons">+</button></div>
+        </div>
+    </div>
+    </div>
+    <script>
+        const sum = function (...args) {
+  return args.reduce(
+    (previousSum, currentValue) => previousSum + currentValue,
+    0
+  );
+};
+
+const difference = function (...args) {
+  return args.reduce(
+    (previousNumber, currentValue) => previousNumber - currentValue
+  );
+};
+
+const multiplication = function (...args) {
+  return args.reduce(
+    (previousNumber, currentValue) => previousNumber * currentValue
+  );
+};
+
+const division = function (...args) {
+  return args.reduce(
+    (previousNumber, currentValue) => previousNumber / currentValue
+  );
+};
+
+const result = document.querySelector("#result");
+result.textContent = 0;
+/*const number_7 = document.querySelector("#7");
+const number_8 = document.querySelector("#8");
+const number_9 = document.querySelector("#9");
+const divide_element = document.querySelector("#/");
+const number_4 = document.querySelector("#4");
+const number_5 = document.querySelector("#5");
+const number_6 = document.querySelector("#6");
+const multiplication_element = document.querySelector("#*");
+const number_1 = document.querySelector("#1");
+const number_2 = document.querySelector("#2");
+const number_3 = document.querySelector("#3");
+const subtraction_element = document.querySelector("#-");
+const period = document.querySelector("#.");
+const number_0 = document.querySelector("#0");
+const equals_element = document.querySelector("#=");
+const addition_element = document.querySelector("#+");*/
+
+let resultNumbers = '0';
+
+function solveExpression(){
+    if(resultNumbers.includes('+')){
+      const Numbers = resultNumbers.split('+').map(Number);
+        resultNumbers = sum(...Numbers);
+    }
+    else if(resultNumbers.includes('-')){
+      const Numbers = resultNumbers.split('-').map(Number);
+        resultNumbers = difference(...Numbers);
+    }
+    else if(resultNumbers.includes('*')){
+      const Numbers = resultNumbers.split('*').map(Number);
+        resultNumbers = multiplication(...Numbers);
+    }
+    else if(resultNumbers.includes('/')){
+      const Numbers = resultNumbers.split('/').map(Number);
+        resultNumbers = division(...Numbers);
+    }
+}
+function Press(e){
+  const selectTarget = e.target;
+  const currentContent = selectTarget.textContent;
+  if(currentContent === '='){
+    solveExpression(); 
+  }
+  else{
+    resultNumbers += currentContent; 
+  }
+    result.textContent = resultNumbers;
+}N
+const allButtons = document.querySelectorAll(".clickButtons");
+allButtons.forEach(function (button) {
+  button.addEventListener("click", Press);
+});
+
+    </script>
+</body>
+</html>

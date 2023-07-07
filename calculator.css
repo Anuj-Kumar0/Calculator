@@ -1,0 +1,66 @@
+#html {
+  height: 100%;
+  width: 100%;
+}
+
+#container {
+  margin: auto;
+  margin-top: 40px;
+  height: 60vh;
+  width: 45vh;
+  border: 5px solid black;
+  border-radius: 20px;
+  background-color: rgb(198, 200, 200);
+}
+
+#result {
+  margin: auto;
+  margin-top: 5px;
+  height: 25%;
+  width: 95%;
+  background-color: #eeeeee;
+  border: 2px solid black;
+  border-radius: 15px;
+  text-align: right;
+}
+
+#function_buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.functional {
+  margin: 8px;
+  height: 8vh;
+  width: 10vw;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: gray;
+}
+
+#first_flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+#second_flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+#third_flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+#fourth_flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+div button {
+  margin: 3px 2px 4px 2px;
+  height: 7vh;
+  width: 5vw;
+  font-weight: 600;
+}
