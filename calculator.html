@@ -46,7 +46,7 @@
     </div>
     </div>
     <script>
-        const sum = function (...args) {
+        /*const sum = function (...args) {
   return args.reduce(
     (previousSum, currentValue) => previousSum + currentValue,
     0
@@ -69,10 +69,10 @@ const division = function (...args) {
   return args.reduce(
     (previousNumber, currentValue) => previousNumber / currentValue
   );
-};
+};*/
 
-const result = document.querySelector("#result");
-result.textContent = 0;
+//const result = document.querySelector("#result");
+/*result.textContent = 0;*/
 /*const number_7 = document.querySelector("#7");
 const number_8 = document.querySelector("#8");
 const number_9 = document.querySelector("#9");
@@ -90,9 +90,9 @@ const number_0 = document.querySelector("#0");
 const equals_element = document.querySelector("#=");
 const addition_element = document.querySelector("#+");*/
 
-let resultNumbers = '0';
+//let resultNumbers = '0';
 
-function solveExpression(){
+/*function solveExpression(){
     if(resultNumbers.includes('+')){
       const Numbers = resultNumbers.split('+').map(Number);
         resultNumbers = sum(...Numbers);
@@ -109,7 +109,65 @@ function solveExpression(){
       const Numbers = resultNumbers.split('/').map(Number);
         resultNumbers = division(...Numbers);
     }
+}*/
+/*function solveExpression() {
+  let result = 0;
+  let currentOperator = "+";
+  let currentNumber = "";
+
+  for (let i = 0; i < resultNumbers.length; i++) {
+    const char = resultNumbers[i];
+
+    if (char === "+" || char === "-" || char === "*" || char === "/") {
+      if (currentNumber !== "") {
+        const number = parseFloat(currentNumber);
+
+        switch (currentOperator) {
+          case "+":
+            result += number;
+            break;
+          case "-":
+            result -= number;
+            break;
+          case "*":
+            result *= number;
+            break;
+          case "/":
+            result /= number;
+            break;
+        }
+
+        currentNumber = "";
+      }
+
+      currentOperator = char;
+    } else {
+      currentNumber += char;
+    }
+  }
+
+  if (currentNumber !== "") {
+    const number = parseFloat(currentNumber);
+
+    switch (currentOperator) {
+      case "+":
+        result += number;
+        break;
+      case "-":
+        result -= number;
+        break;
+      case "*":
+        result *= number;
+        break;
+      case "/":
+        result /= number;
+        break;
+    }
+  }
+
+  resultNumbers = result.toString();
 }
+
 function Press(e){
   const selectTarget = e.target;
   const currentContent = selectTarget.textContent;
@@ -120,11 +178,11 @@ function Press(e){
     resultNumbers += currentContent; 
   }
     result.textContent = resultNumbers;
-}N
+}
 const allButtons = document.querySelectorAll(".clickButtons");
 allButtons.forEach(function (button) {
   button.addEventListener("click", Press);
-});
+});*/
 
     </script>
 </body>
