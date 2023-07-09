@@ -15,8 +15,8 @@
     </div>
     
     <div id="function_buttons">
-        <button class="functional">CLEAR</button>
-        <button class="functional"><i class="fa-solid fa-delete-left"></i></button>
+        <button class="functional" id="clear">CLEAR</button>
+        <button class="functional" id="backspace"><i class="fa-solid fa-delete-left"></i></button>
     </div>
     <div id="numbers_operators">
         <div id="first_flex">
@@ -72,6 +72,15 @@ const division = function (...args) {
 };
 
 const finalResult = document.querySelector("#result");
+result.textContent = 0;
+
+const clear = document.querySelector('#clear');
+clear.addEventListener('click', clearOutput);
+
+function clearOutput(){
+  initialResult = 0;
+  result.textContent = 0;
+};
 
 const allButtons = document.querySelectorAll(".clickButtons");
 allButtons.forEach(function (button) {
@@ -118,6 +127,9 @@ function solveExpression(){
     finalResult.textContent = initialResult;
   }
 };
+
+const backspace = document.querySelector('#backspace');
+backspace.addEventListener('click', deleteSingleOutput);
 
     </script>
 </body>
