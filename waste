@@ -1,0 +1,120 @@
+/*result.textContent = 0;*/
+/*const number_7 = document.querySelector("#7");
+const number_8 = document.querySelector("#8");
+const number_9 = document.querySelector("#9");
+const divide_element = document.querySelector("#/");
+const number_4 = document.querySelector("#4");
+const number_5 = document.querySelector("#5");
+const number_6 = document.querySelector("#6");
+const multiplication_element = document.querySelector("#*");
+const number_1 = document.querySelector("#1");
+const number_2 = document.querySelector("#2");
+const number_3 = document.querySelector("#3");
+const subtraction_element = document.querySelector("#-");
+const period = document.querySelector("#.");
+const number_0 = document.querySelector("#0");
+const equals_element = document.querySelector("#=");
+const addition_element = document.querySelector("#+");*/
+
+//let resultNumbers = '0';
+
+/*function solveExpression(){
+    if(resultNumbers.includes('+')){
+      const Numbers = resultNumbers.split('+').map(Number);
+        resultNumbers = sum(...Numbers);
+    }
+    else if(resultNumbers.includes('-')){
+      const Numbers = resultNumbers.split('-').map(Number);
+        resultNumbers = difference(...Numbers);
+    }
+    else if(resultNumbers.includes('*')){
+      const Numbers = resultNumbers.split('*').map(Number);
+        resultNumbers = multiplication(...Numbers);
+    }
+    else if(resultNumbers.includes('/')){
+      const Numbers = resultNumbers.split('/').map(Number);
+        resultNumbers = division(...Numbers);
+    }
+}*/
+/*function solveExpression() {
+  let result = 0;
+  let currentOperator = "+";
+  let currentNumber = "";
+
+  for (let i = 0; i < resultNumbers.length; i++) {
+    const char = resultNumbers[i];
+
+    if (char === "+" || char === "-" || char === "*" || char === "/") {
+      if (currentNumber !== "") {
+        const number = parseFloat(currentNumber);
+
+        switch (currentOperator) {
+          case "+":
+            result += number;
+            break;
+          case "-":
+            result -= number;
+            break;
+          case "*":
+            result *= number;
+            break;
+          case "/":
+            result /= number;
+            break;
+        }
+
+        currentNumber = "";
+      }
+
+      currentOperator = char;
+    } else {
+      currentNumber += char;
+    }
+  }
+
+  if (currentNumber !== "") {
+    const number = parseFloat(currentNumber);
+
+    switch (currentOperator) {
+      case "+":
+        result += number;
+        break;
+      case "-":
+        result -= number;
+        break;
+      case "*":
+        result *= number;
+        break;
+      case "/":
+        result /= number;
+        break;
+    }
+  }
+
+  resultNumbers = result.toString();
+}
+
+function Press(e){
+  const selectTarget = e.target;
+  const currentContent = selectTarget.textContent;
+  if(currentContent === '='){
+    solveExpression(); 
+  }
+  else{
+    resultNumbers += currentContent; 
+  }
+    result.textContent = resultNumbers;
+}
+
+});*/
+const resultNumbers = "";
+function Press(e) {
+  const selectTarget = e.target;
+  const currentContent = selectTarget.textContent;
+  if (resultNumbers === "=") {
+    solveExpression();
+  } else {
+    resultNumbers += currentContent;
+  }
+  return (result.textContent = resultNumbers);
+}
