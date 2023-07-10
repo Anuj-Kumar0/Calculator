@@ -13,15 +13,29 @@
   background-color: rgb(198, 200, 200);
 }
 
-#result {
+#resultContainer {
   margin: auto;
   margin-top: 5px;
   height: 25%;
   width: 95%;
   background-color: #eeeeee;
+  color: rgb(141, 140, 140);
   border: 2px solid black;
   border-radius: 15px;
   text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#result2 {
+  margin-right: 2px;
+  margin-top: 1px;
+}
+#result {
+  color: black;
+  margin-top: 70px;
+  margin-right: 2px;
 }
 
 #function_buttons {
@@ -36,6 +50,10 @@
   border: 2px solid black;
   border-radius: 5px;
   background-color: gray;
+}
+
+#numbers_operators {
+  margin-top: 5px;
 }
 
 #first_flex {
@@ -63,4 +81,5 @@ div button {
   height: 7vh;
   width: 5vw;
   font-weight: 600;
+  border-radius: 7px;
 }

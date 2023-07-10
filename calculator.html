@@ -11,7 +11,9 @@
 <body>
     
     <div id="container">
-        <div id="result">
+        <div id="resultContainer">
+          <span id="result2"></span>
+          <span id="result"></span>
     </div>
     
     <div id="function_buttons">
@@ -77,9 +79,12 @@ result.textContent = 0;
 const clear = document.querySelector('#clear');
 clear.addEventListener('click', clearOutput);
 
+const result2 = document.querySelector('#result2')
+
 function clearOutput(){
-  initialResult = 0;
-  result.textContent = 0;
+  initialResult = '';
+  result.textContent = '';
+  result2.textContent = '';
 };
 
 const allButtons = document.querySelectorAll(".clickButtons");
@@ -124,7 +129,10 @@ function solveExpression(){
   }
   if (anotherResult !== undefined) {
     initialResult = anotherResult;
-    finalResult.textContent = initialResult;
+    /*finalResult.textContent = initialResult;*/
+    result2.textContent = initialResult;
+    finalResult.textContent = '';
+    initialResult = result2.textContent;
   }
 };
 
