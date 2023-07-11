@@ -73,6 +73,7 @@ const division = function (...args) {
   );
 };
 
+
 const finalResult = document.querySelector("#result");
 result.textContent = 0;
 
@@ -85,6 +86,7 @@ function clearOutput(){
   initialResult = '';
   result.textContent = '';
   result2.textContent = '';
+  decimalClicked = false;
 };
 
 const allButtons = document.querySelectorAll(".clickButtons");
@@ -93,6 +95,8 @@ allButtons.forEach(function (button) {
 });
 
 let initialResult = '';
+let decimalClicked = false;
+
 
 function Press(e){
   let selectTarget = e.target;
@@ -100,6 +104,13 @@ function Press(e){
 
   if(intoResult === '='){
     solveExpression();
+  }
+  else if (intoResult === '.') {
+    if (!decimalClicked) {
+      initialResult += intoResult;
+      decimalClicked = true;
+      finalResult.textContent = initialResult;
+    }
   }
   else{
     initialResult += intoResult;
@@ -132,12 +143,17 @@ function solveExpression(){
     /*finalResult.textContent = initialResult;*/
     result2.textContent = initialResult;
     finalResult.textContent = '';
-    initialResult = result2.textContent;
+    //initialResult = result2.textContent;
   }
 };
 
 const backspace = document.querySelector('#backspace');
 backspace.addEventListener('click', deleteSingleOutput);
+
+function deleteSingleOutput() {
+  initialResult = initialResult.slice(0, -1); 
+  finalResult.textContent = initialResult;
+}
 
     </script>
 </body>
