@@ -3,6 +3,13 @@
   width: 100%;
 }
 
+body {
+  background-image: url("Mathematics.jpeg");
+  height: 100%;
+  /*background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;*/
+}
 #container {
   margin: auto;
   margin-top: 40px;
@@ -18,7 +25,7 @@
   margin-top: 5px;
   height: 25%;
   width: 95%;
-  background-color: #eeeeee;
+  background-color: #ddebf7;
   color: rgb(141, 140, 140);
   border: 2px solid black;
   border-radius: 15px;
@@ -49,7 +56,7 @@
   width: 10vw;
   border: 2px solid black;
   border-radius: 5px;
-  background-color: gray;
+  background-color: #b9f0f0;
 }
 
 #numbers_operators {
@@ -82,4 +89,5 @@ div button {
   width: 5vw;
   font-weight: 600;
   border-radius: 7px;
+  background-color: #ddebf7;
 }
