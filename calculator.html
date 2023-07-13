@@ -118,8 +118,6 @@ function Press(e){
   }
 };
 
-
-
 function solveExpression(){
   let anotherResult;
   if(initialResult.includes('+')){
@@ -154,6 +152,65 @@ function deleteSingleOutput() {
   initialResult = initialResult.slice(0, -1); 
   finalResult.textContent = initialResult;
 }
+
+document.addEventListener('keydown', keyPress);
+
+function keyPress(e){
+  let selectKey = e.key;
+
+  if(!isNaN(selectKey)){
+    initialResult += selectKey;
+    finalResult.textContent = initialResult;
+  }
+  else if (selectKey === 'Backspace'){
+    initialResult = initialResult.slice(0, -1); 
+  finalResult.textContent = initialResult;
+  }
+  else if (selectKey === '+' || selectKey === '-' || selectKey === '*' || selectKey === '/'){
+    initialResult += selectKey;
+    finalResult.textContent = initialResult;
+  }
+  else if(selectKey === '=' || selectKey === 'Enter'){
+    solveKeyExpression();
+  }
+  else if(selectKey === 'Delete'){
+    clearOutput();
+  }
+  else if (selectKey === '.') {
+    if (!decimalClicked) {
+      initialResult += selectKey;
+      decimalClicked = true;
+      finalResult.textContent = initialResult;
+    }
+  }
+};
+
+function solveKeyExpression(){
+  let anotherResult;
+  if(initialResult.includes('+')){
+    const splitAddNumbers = initialResult.split('+').map(Number);
+    anotherResult = sum(...splitAddNumbers);
+  }
+  else if(initialResult.includes('-')){
+    const splitDifferenceNumbers = initialResult.split('-').map(Number);
+    anotherResult = difference(...splitDifferenceNumbers);
+  }
+  else if(initialResult.includes('*')){
+    const splitMultiplyNumbers = initialResult.split('*').map(Number);
+    anotherResult = multiplication(...splitMultiplyNumbers);
+  }
+  else if(initialResult.includes('/')){
+    const splitDivisionNumbers = initialResult.split('/').map(Number);
+    anotherResult = division(...splitDivisionNumbers);
+  }
+  if (anotherResult !== undefined) {
+    initialResult = anotherResult;
+    /*finalResult.textContent = initialResult;*/
+    result2.textContent = initialResult;
+    finalResult.textContent = '';
+    //initialResult = result2.textContent;
+  }
+};
 
     </script>
 </body>
